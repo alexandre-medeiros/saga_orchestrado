@@ -1,2 +1,21 @@
 server:
-    port:8091
+    port: 8091
+
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5433/payment-db
+        username: postgres
+        password: postgres
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: payment-group
+            auto-offset-reset: latest
+logging:
+    level:
+        org:
+            apache:
+                kafka: OFF

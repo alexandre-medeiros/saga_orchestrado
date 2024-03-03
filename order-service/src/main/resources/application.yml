@@ -1,2 +1,25 @@
 server:
-    port:3000
+    port: 3000
+
+spring:
+    data:
+        mongodb:
+          database: admin
+          uri: mongodb://admin:123456@localhost:27017/admin
+    jpa:
+      show-sql: true
+    kafka:
+      bootstrap-servers: localhost:9092
+      consumer:
+        group-id: order-group
+        auto-offset-reset: latest
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG

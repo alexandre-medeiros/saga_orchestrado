@@ -1,2 +1,20 @@
 server:
-    port:8090
+    port: 8090
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/product-db
+        username: postgres
+        password: postgres
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: product-group
+            auto-offset-reset: latest
+logging:
+    level:
+        org:
+            apache:
+                kafka: OFF

@@ -1,2 +1,21 @@
 server:
-    port:8092
+    port: 8092
+
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5434/inventory-db
+        username: postgres
+        password: postgres
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: inventory-group
+            auto-offset-reset: latest
+logging:
+    level:
+        org:
+            apache:
+                kafka: OFF
